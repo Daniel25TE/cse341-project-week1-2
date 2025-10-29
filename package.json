@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Daniel25TE/cse341-project-week1-2/issues"
   },
-  "homepage": "https://github.com/Daniel25TE/cse341-project-week1-2#readme"
+  "homepage": "https://github.com/Daniel25TE/cse341-project-week1-2#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
