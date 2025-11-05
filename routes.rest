@@ -1,4 +1,4 @@
-//Local Host
+//****************************************Local Host*************************************//
 
 ### Test GET request locally
 GET http://localhost:3000
@@ -9,8 +9,35 @@ GET http://localhost:3000/contacts
 ### Get contact by id
 GET http://localhost:3000/contacts/69023d7681987bcaec5241d5
 
+### Post request, to create a new contact
+POST http://localhost:3000/contacts
+content-type: application/json
 
-//Render Environment
+{
+    "firstName": "mary",
+    "lastName": "maribao",
+    "email": "test@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "03/15/2001"    
+}
+
+### Put request, to update an existing contact
+PUT http://localhost:3000/contacts/69023df581987bcaec5241d6
+content-type: application/json
+
+{
+    "firstName": "Ebuka",
+    "lastName": "Okubalu",
+    "email": "ebukatest4@gmail.com",
+    "favoriteColor": "brown",
+    "birthday": "07/14/2003"
+}
+
+### Delete request, to delete an existing contact by id
+DELETE http://localhost:3000/contacts/690bcdcb6aa4ce9ead0e2eb7
+
+
+//**********************8Render Environment**************************//
 
 ### Test GET request in production
 GET https://project1-mvic.onrender.com/
@@ -20,3 +47,30 @@ GET https://project1-mvic.onrender.com/contacts
 
 ### GET contact by id
 GET https://project1-mvic.onrender.com/contacts/69023df581987bcaec5241d6
+
+### Post request, to create a new contact
+POST http://project1-mvic.onrender.com/contacts
+content-type: application/json
+
+{
+    "firstName": "mary",
+    "lastName": "maribao",
+    "email": "test@gmail.com",
+    "favoriteColor": "blue",
+    "birthday": "03/15/2001"    
+}
+
+### Put request, to update an existing contact
+PUT http://project1-mvic.onrender.com/contacts/69023df581987bcaec5241d6
+content-type: application/json
+
+{
+    "firstName": "Ebuka",
+    "lastName": "Okubalu",
+    "email": "ebukatest4@gmail.com",
+    "favoriteColor": "brown",
+    "birthday": "07/14/2003"
+}
+
+### Delete request, to delete an existing contact by id
+DELETE http://project1-mvic.onrender.com/contacts/690bcdcb6aa4ce9ead0e2eb7
