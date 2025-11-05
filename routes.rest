@@ -3,15 +3,19 @@
 ### Test GET request locally
 GET http://localhost:3000
 
+
 ### Get all contacts
 GET http://localhost:3000/contacts
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 ### Get contact by id
 GET http://localhost:3000/contacts/69023d7681987bcaec5241d5
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 ### Post request, to create a new contact
 POST http://localhost:3000/contacts
 content-type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
     "firstName": "mary",
@@ -24,6 +28,7 @@ content-type: application/json
 ### Put request, to update an existing contact
 PUT http://localhost:3000/contacts/69023df581987bcaec5241d6
 content-type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
     "firstName": "Ebuka",
@@ -34,10 +39,10 @@ content-type: application/json
 }
 
 ### Delete request, to delete an existing contact by id
-DELETE http://localhost:3000/contacts/690bcdcb6aa4ce9ead0e2eb7
+DELETE http://localhost:3000/contacts/690bd8b5a9dbf5783685b462
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
-
-//**********************8Render Environment**************************//
+//**********************Render Environment**************************//
 
 ### Test GET request in production
 GET https://project1-mvic.onrender.com/
@@ -73,4 +78,4 @@ content-type: application/json
 }
 
 ### Delete request, to delete an existing contact by id
-DELETE http://project1-mvic.onrender.com/contacts/690bcdcb6aa4ce9ead0e2eb7
+DELETE http://project1-mvic.onrender.com/contacts/690bdbb35980b6e512879efa
