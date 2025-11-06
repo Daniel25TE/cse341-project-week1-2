@@ -1,13 +1,9 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const apiKey =
-  'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
 
 const getAll = async (req, res) => {
-    if (req.header('apiKey') !== apiKey) {
-    return res.status(401).json({ message: 'Invalid apiKey, please read the documentation.' });
-  }
+
     
     const result = await mongodb.getDatabase().db().collection('contacts').find();
     result.toArray().then((contacts) => {
@@ -18,9 +14,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    if (req.header('apiKey') !== apiKey) {
-    return res.status(401).json({ message: 'Invalid apiKey, please read the documentation.' });
-  }
+    
 
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('contacts').find({_id: userId });
@@ -31,9 +25,7 @@ const getSingle = async (req, res) => {
 };
 
 const createContact = async (req, res) => {
-    if (req.header('apiKey') !== apiKey) {
-    return res.status(401).json({ message: 'Invalid apiKey, please read the documentation.' });
-  }
+    
 
     const contact = {
         firstName: req.body.firstName,
@@ -55,9 +47,7 @@ const createContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
-    if (req.header('apiKey') !== apiKey) {
-    return res.status(401).json({ message: 'Invalid apiKey, please read the documentation.' });
-  }
+    
 
     const userId = new ObjectId(req.params.id);
     const contact = {
@@ -76,9 +66,7 @@ const updateContact = async (req, res) => {
 };
 
 const deleteContact = async (req, res) => {
-    if (req.header('apiKey') !== apiKey) {
-    return res.status(401).json({ message: 'Invalid apiKey, please read the documentation.' });
-  }
+   
 
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db().collection('contacts').deleteOne({ _id: userId });
