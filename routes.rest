@@ -49,13 +49,16 @@ GET https://project1-mvic.onrender.com/
 
 ### GET all contacts
 GET https://project1-mvic.onrender.com/contacts
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 ### GET contact by id
-GET https://project1-mvic.onrender.com/contacts/69023df581987bcaec5241d6
+GET https://project1-mvic.onrender.com/contacts/69023c7681987bcaec5241d4
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 ### Post request, to create a new contact
 POST http://project1-mvic.onrender.com/contacts
 content-type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
     "firstName": "mary",
@@ -66,8 +69,9 @@ content-type: application/json
 }
 
 ### Put request, to update an existing contact
-PUT http://project1-mvic.onrender.com/contacts/69023df581987bcaec5241d6
+PUT http://project1-mvic.onrender.com/contacts/690bd5fca9dbf5783685b461
 content-type: application/json
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
 
 {
     "firstName": "Ebuka",
@@ -78,4 +82,5 @@ content-type: application/json
 }
 
 ### Delete request, to delete an existing contact by id
-DELETE http://project1-mvic.onrender.com/contacts/690bdbb35980b6e512879efa
+DELETE http://project1-mvic.onrender.com/contacts/690be474548003d720d16214
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
