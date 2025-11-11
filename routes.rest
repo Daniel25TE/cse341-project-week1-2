@@ -52,7 +52,7 @@ GET https://project1-mvic.onrender.com/contacts
 
 
 ### GET contact by id
-GET https://project1-mvic.onrender.com/contacts/69023c7681987bcaec5241d4
+GET https://project1-mvic.onrender.com/contacts/69128fbc9907a6f03395e679
 
 
 ### Post request, to create a new contact
@@ -82,5 +82,5 @@ content-type: application/json
 }
 
 ### Delete request, to delete an existing contact by id
-DELETE http://project1-mvic.onrender.com/contacts/690be474548003d720d16214
+DELETE http://project1-mvic.onrender.com/contacts/69128e639907a6f03395e678
 

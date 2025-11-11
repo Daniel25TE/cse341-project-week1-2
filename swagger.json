@@ -33,6 +33,15 @@
       "get": {
         "description": "",
         "produces": ["application/json"],
+        "parameters": [
+      {
+        "name": "Accept",
+        "in": "header",
+        "type": "string",
+        "required": false,
+        "default": "application/json"
+      }
+    ],
         "responses": {
           "200": {
             "description": "OK"
@@ -87,6 +96,13 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "type": "string",
+            "required": false,
+            "default": "application/json"
           }
         ],
         "responses": {

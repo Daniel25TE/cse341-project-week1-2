@@ -2,42 +2,45 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-  mongodb
-    .getDatabase()
-    .db()
-    .collection('contacts')
-    .find()
-    .toArray((err, contacts) => {
-      if (err) {
-        console.error('Error retrieving contacts:', err);
-        return res.status(500).json({ message: 'Failed to retrieve contacts' });
-      }
-      res.status(200).json(contacts);
-  });
+  try {
+    const contacts = await mongodb
+      .getDatabase()
+      .db()
+      .collection('contacts')
+      .find()
+      .toArray();
+
+    res.status(200).json(contacts);
+  } catch (err) {
+    console.error('Error retrieving contacts:', err);
+    res.status(500).json({ message: 'Failed to retrieve contacts' });
+  }
 };
 
-const getSingle = (req, res) => {
+const getSingle = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     return res.status(400).json({ message: 'Must use a valid contact ID to find a contact.' });
   }
 
   const userId = new ObjectId(req.params.id);
 
-  mongodb
-    .getDatabase()
-    .db()
-    .collection('contacts')
-    .find({ _id: userId })
-    .toArray((err, contact) => {
-      if (err) {
-        console.error('Error fetching contact:', err);
-        return res.status(500).json({ message: 'Failed to retrieve contact.' });
-      }
-      if (!contact || contact.length === 0) {
-        return res.status(404).json({ message: 'Contact not found.'})
-      }
-      res.status(200).json(contact[0]);
-  });
+  try {
+    const contact = await mongodb
+      .getDatabase()
+      .db()
+      .collection('contacts')
+      .find({ _id: userId })
+      .toArray();
+
+    if (!contact || contact.length === 0) {
+      return res.status(404).json({ message: 'Contact not found.' });
+    }
+
+    res.status(200).json(contact[0]);
+  } catch (err) {
+    console.error('Error fetching contact:', err);
+    res.status(500).json({ message: 'Failed to retrieve contact.' });
+  }
 };
 
 const createContact = async (req, res) => {
