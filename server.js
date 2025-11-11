@@ -13,6 +13,12 @@ app.use(bodyParser.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', require('./routes'));
 
+process.on('uncaughtException', (err, origin) => {
+  console.error(`Uncaught Exception: ${err.message}`);
+  console.error(`Stack Trace: ${err.stack}`);
+  console.error(`Origin: ${origin}`);
+});
+
 mongodb.initDb((err) => {
   if (err) {
     console.log(err);
