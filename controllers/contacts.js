@@ -10,6 +10,7 @@ const getAll = async (req, res) => {
       .find()
       .toArray();
 
+    res.setHeader('Content-Type', 'application/json');
     res.status(200).json(contacts);
   } catch (err) {
     console.error('Error retrieving contacts:', err);
@@ -36,6 +37,7 @@ const getSingle = async (req, res) => {
       return res.status(404).json({ message: 'Contact not found.' });
     }
 
+    res.setHeader('Content-Type', 'application/json');
     res.status(200).json(contact[0]);
   } catch (err) {
     console.error('Error fetching contact:', err);
